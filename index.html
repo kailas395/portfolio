@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kailas — Frontend Developer</title>
+
+  <!-- styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- fonts & icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loading-screen" aria-hidden="false">
+    <div class="loading-content">
+      <i class="fa-solid fa-laptop-code fa-5x main-icon hidden"></i>
+      <h1 id="loading-text" class="hidden">MY PROFILE</h1>
+      <div class="sub-icons">
+        <i class="fa-brands fa-github fa-2x hidden"></i>
+        <i class="fa-solid fa-code fa-2x hidden"></i>
+        <i class="fa-solid fa-user fa-2x hidden"></i>
+      </div>
+      <h2 id="designer-text" class="hidden">Designed by Kailas</h2>
+    </div>
+  </div>
+
+  <!-- MAIN PAGE -->
+  <div id="main-page" class="main-page">
+
+    <!-- HEADER / NAV -->
+    <header class="header-list" role="banner">
+      <div class="div-list">
+        <button id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <!-- Dark Mode Toggle -->
+        <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <ul class="ul-list" role="navigation" aria-label="Main Navigation">
+          <li class="active"><i class="fa-regular fa-house"></i><a href="#home">Home</a></li>
+          <li><i class="fa-regular fa-address-card"></i><a href="#about">About</a></li>
+          <li><i class="fa-regular fa-folder-open"></i><a href="#project">Projects</a></li>
+          <li><i class="fa-solid fa-code"></i><a href="#services">Services</a></li>
+          <li><i class="fa-regular fa-envelope"></i><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- HOME -->
+    <section class="home" id="home" tabindex="-1">
+      <p class="home-p"><span class="home-s"></span> Available for freelance work</p>
+      <div class="home-container">
+        <div class="home-section">
+          <div class="info-home">
+            <h1>Hi, I'm <span class="accent-name">Kailas</span></h1>
+            <h3 class="typing-target">Frontend Developer | Tech Enthusiast | Student</h3>
+
+            <div class="info-p">
+              <p>NCC Cadet.</p>
+              <p>Learning & building with modern front-end tools — turning ideas into clean code with AI help.</p>
+            </div>
+
+            <div class="info-p2">
+              <p><i class="fa-solid fa-location-dot"></i> Kollam, Kerala</p>
+              <p><i class="fa-solid fa-briefcase"></i> Available Now</p>
+            </div>
+
+            <div class="btnn">
+              <a class="btn-home1" href="#contact"><i class="fa-solid fa-arrow-right"></i> Wanna Hire Me</a>
+            </div>
+
+            <div class="hhr"><hr></div>
+
+            <div class="follow">
+              <p class="followw">Follow me:</p>
+              <ul class="social-list">
+                <li><a href="https://github.com/kailas395" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/kailas-nath-a-07744b339" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="https://www.instagram.com/kailassss_" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="home-image">
+          <img src="images/img2.jpg" alt="Kailas portrait or project screenshot">
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about" tabindex="-1">
+      <p class="section-label">ABOUT ME</p>
+      <div class="title">
+        <h1>Building Meaningful</h1>
+        <h1>Digital Experiences</h1>
+      </div>
+      <hr class="section-hr">
+      <div class="about-container">
+        <div class="info-about">
+          <div class="about-info">
+            <p>I'm Kailas Nath A — a Frontend Developer, BTech CSE student at College of Engineering Perumon, and an editor. I enjoy turning ideas into pixel-perfect, accessible interfaces.</p>
+            <p>When I'm not coding I learn new libraries, improve projects, and explore performance & UX improvements.</p>
+          </div>
+
+          <h2>What Drives Me</h2>
+
+          <div class="card">
+            <div class="c1">
+              <h3><i class="fa-solid fa-code"></i> Languages</h3>
+              <p>HTML, CSS, JavaScript, C </p>
+            </div>
+
+            <div class="c1">
+              <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+              <p>B.Tech — Computer Science & Engineering, College of Engineering Perumon</p>
+            </div>
+
+            <div class="c1">
+              <h3><i class="fa-solid fa-folder-open"></i> Projects</h3>
+              <p>Built multiple projects (Freelancing Hub, portfolio, weather app, and more)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="project" id="project" tabindex="-1">
+      <p class="section-label">PROJECTS</p>
+      <h1>Featured Work</h1>
+      <hr class="section-hr">
+      <div class="info-pro">
+        <p>A showcase of projects I've been working on and links to repos.</p>
+      </div>
+
+      <div class="projects-container">
+        <div class="project-card">
+          <h3>Reverse Weather App & More</h3>
+          <p>Responsive app showing real-time weather with API integration & some other projects.</p>
+          <div class="skills">
+            <a>HTML </a><a>CSS </a><a>API</a>
+          </div>
+          <div class="btns">
+            <a href="https://github.com/kailas395" class="btn" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="btn" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services" tabindex="-1">
+      <p class="section-label">SERVICES</p>
+      <h1>What I Offer</h1>
+      <hr class="section-hr">
+      <div class="services-container">
+        <div class="service-card">
+          <img src="images/icon1.jpg" alt="">
+          <h3>Web Development</h3>
+          <p>Responsive sites, component-driven UI, and performance optimizations.</p>
+        </div>
+        <div class="service-card">
+          <img src="images/icon2.jpg" alt="">
+          <h3>Frontend Engineering</h3>
+          <p>React, state management, and accessible UI systems.</p>
+        </div>
+        <div class="service-card">
+          <img src="images/icon3.jpg" alt="">
+          <h3>UI/UX & Editing</h3>
+          <p>Design improvements, prototypes, and content/editor work.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact" tabindex="-1">
+      <p class="section-label">CONTACT</p>
+      <h1>Get in Touch</h1>
+      <div class="contact-content">
+        <div class="contact-info">
+          <p>I'm always open to discuss exciting projects and opportunities. Let's collaborate!</p>
+          <div class="contact-details">
+            <div class="contact-item"><i class="fa-solid fa-envelope"></i><span>vijayasre284@gmail.com</span></div>
+            <div class="contact-item"><i class="fa-solid fa-location-dot"></i><span>Kollam, Kerala</span></div>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/kailas395" class="social-link" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/kailas-nath-a-07744b339" class="social-link" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form id="contact-form" action="#" method="post" novalidate>
+            <div class="form-group"><input type="text" name="user_name" placeholder="Your Name" required></div>
+            <div class="form-group"><input type="email" name="user_email" placeholder="Your Email" required></div>
+            <div class="form-group"><textarea name="message" placeholder="Your Message" rows="5" required></textarea></div>
+            <button type="submit" class="btn-send">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p class="footer-copy">&copy; <span id="year"></span> Kailas. All Rights Reserved.</p>
+    </footer>
+
+    <!-- back to top -->
+    <div id="back-to-top" aria-hidden="true"><i class="fa-solid fa-chevron-up"></i></div>
+
+  </div> <!-- end main-page -->
+
+  <script src="main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,113 @@
+// ---------------- Navigation Active Link ----------------
+const navLinks = document.querySelectorAll('.ul-list li a');
+const sections = document.querySelectorAll('section');
+
+function removeActive() {
+  navLinks.forEach(link => link.parentElement.classList.remove('active'));
+}
+
+navLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+
+    window.scrollTo({
+      top: targetSection.offsetTop - 80,
+      behavior: 'smooth'
+    });
+
+    removeActive();
+    link.parentElement.classList.add('active');
+  });
+});
+
+// ---------------- Scroll Highlight ----------------
+const backToTop = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+  let scrollPos = window.scrollY + 100;
+
+  sections.forEach(section => {
+    if(scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight){
+      removeActive();
+      const activeLink = document.querySelector(`.ul-list li a[href="#${section.id}"]`);
+      if(activeLink) activeLink.parentElement.classList.add('active');
+    }
+  });
+
+  // back-to-top button
+  backToTop.style.display = window.scrollY > 500 ? 'flex' : 'none';
+});
+
+// ---------------- Back to top ----------------
+backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+// ---------------- Typing effect ----------------
+const typingElement = document.querySelector('.typing-target'); 
+const words = ["Frontend Developer | Tech Enthusiast | Student"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingSpeed = 100;
+
+function type() {
+    const currentWord = words[wordIndex];
+    let displayedText = currentWord.substring(0, charIndex);
+    typingElement.innerHTML = displayedText + '<span class="cursor">|</span>';
+
+    if (!isDeleting && charIndex < currentWord.length) {
+        charIndex++;
+        setTimeout(type, typingSpeed);
+    } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(type, typingSpeed / 2);
+    } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(type, 1000);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', type);
+
+// ---------------- Loading Screen ----------------
+document.addEventListener("DOMContentLoaded", () => {
+  const loadingText = document.getElementById("loading-text");
+  const mainIcon = document.querySelector(".main-icon");
+  const subIcons = document.querySelectorAll(".sub-icons i");
+  const designerText = document.getElementById("designer-text");
+  const loadingScreen = document.getElementById("loading-screen");
+  const mainPage = document.getElementById("main-page");
+
+  function showElement(element, delay=0){
+    setTimeout(() => {
+      element.classList.remove("hidden");
+      element.classList.add("fall");
+    }, delay);
+  }
+
+  showElement(loadingText, 0);          
+  showElement(mainIcon, 800);         
+  subIcons.forEach((icon, idx) => showElement(icon, 1600 + idx*400));
+  showElement(designerText, 2800);    
+
+  setTimeout(() => {
+    loadingScreen.style.opacity = '0';
+    setTimeout(() => loadingScreen.style.display='none', 500);
+    mainPage.classList.add("visible");
+  }, 4000);
+});
+
+// ---------------- Dark Mode Toggle ----------------
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+darkModeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+});
+
+// Load theme from localStorage
+if(localStorage.getItem('theme') === 'dark'){
+  document.body.classList.add('dark-mode');
+}
