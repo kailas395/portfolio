@@ -111,3 +111,27 @@ darkModeToggle.addEventListener('click', () => {
 if(localStorage.getItem('theme') === 'dark'){
   document.body.classList.add('dark-mode');
 }
+// ---------------- Mobile Navigation Toggle ----------------
+const navToggle = document.getElementById("nav-toggle");
+const navMenu = document.querySelector(".ul-list");
+
+navToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+
+  // change menu icon
+  if (navMenu.classList.contains("show")) {
+    navToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    navToggle.setAttribute("aria-expanded", "true");
+  } else {
+    navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    navToggle.setAttribute("aria-expanded", "false");
+  }
+});
+
+// close menu when clicking a link
+document.querySelectorAll(".ul-list li a").forEach(link => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("show");
+    navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+  });
+});
